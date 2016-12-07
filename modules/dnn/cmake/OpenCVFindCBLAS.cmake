@@ -54,7 +54,13 @@ if(${the_module}_WITH_BLAS)
         endif()
 
         set(CBLAS_H_PROXY_PATH ${CMAKE_CURRENT_BINARY_DIR}/opencv_cblas.hpp)
-        set(_include_str "\#include \"${CBLAS_H_PATH}\"")
+
+        if(APPLE_FRAMEWORK)
+            set(_include_str "\#include <Accelerate/Accelerate.h>")
+        else()
+            set(_include_str "\#include \"${CBLAS_H_PATH}\"")
+        endif()
+
         file(WRITE ${CBLAS_H_PROXY_PATH} ${_include_str})
     endif()
 endif()
