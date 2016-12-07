@@ -1,3 +1,6 @@
+## REPO with DNN module tested and working on iOS. 
+Caffe functioning on iPhone 6s using Accelerate framework, BLAS etc.
+
 ## Repository for OpenCV's extra modules
 
 This repository is intended for development of so-called "extra" modules,
